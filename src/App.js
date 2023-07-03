@@ -5,6 +5,8 @@ function App() {
   return (
     <div>
       <h1>React</h1>
+      <button>Click here</button>
+      <button> not here please</button>
     </div>
   );
 }

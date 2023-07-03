@@ -7,6 +7,9 @@ function App() {
       <h1>React</h1>
       <button>Click here</button>
       <button> not here please</button>
+      <button> not here please</button>
+      <button> not here please</button>
+      
     </div>
   );
 }

@@ -1,15 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import UserList from "./UserData/UserList";
+import NewUser from "./NewUser/NewUser";
+
+const  dummyUserData = [
+  { name: "Mohit", age: 22 ,id : "U1" },
+  { name: "Rohit", age: 24 , id : "U2"}
+];
 
 function App() {
+
+  const[userData, setDetails] = useState(dummyUserData);
+
+  const addDetailsHandler=(data)=>{
+    setDetails((prevDetails)=>(
+      [...prevDetails,data]
+    ));
+  }
+  
   return (
     <div>
-      <h1>React</h1>
-      <button>Click here</button>
-      <button> not here please</button>
-      <button> not here please</button>
-      <button> not here please</button>
-      
+      <NewUser onNewDetails = {addDetailsHandler}/>
+      <UserList userDetails={userData} />
     </div>
   );
 }

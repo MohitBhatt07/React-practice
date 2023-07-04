@@ -1,0 +1,26 @@
+.submit-button{
+  color: white;
+  background-color: rgb(68, 17, 116);
+  margin: 0px 15px;
+}
+
+.form-controls{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+}
+
+.form-control label{
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+.form-control input{
+  border-color: rgb(212, 208, 208);
+}
+
+.form-control{
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}

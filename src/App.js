@@ -12,15 +12,27 @@ function App() {
   const[userData, setDetails] = useState(dummyUserData);
 
   const addDetailsHandler=(data)=>{
-    setDetails((prevDetails)=>(
-      [...prevDetails,data]
-    ));
+    setDetails((prevDetails)=>{
+      // [...prevDetails,data]
+      let updatedDetails =[...prevDetails];
+      updatedDetails.unshift(data);
+      return updatedDetails;
+    });
   }
   
+  const deleteItemHandler =(detailId)=>{
+    setDetails((prevDetails)=>{
+      const updatedDetails = prevDetails.filter((currDetail)=>(
+        currDetail.id !== detailId
+      ))
+      return updatedDetails;
+    })
+  }
+
   return (
     <div>
       <NewUser onNewDetails = {addDetailsHandler}/>
-      <UserList userDetails={userData} />
+      <UserList userDetails={userData} onDeleteItem = {deleteItemHandler}/>
     </div>
   );
 }

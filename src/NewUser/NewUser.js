@@ -6,7 +6,7 @@ import './NewUser.css';
 const NewUser= (props)=>{
   const savedDataHandler= (savedData)=>{
     
-    const data = {...savedData,id: Math.random().toString};
+    const data = {...savedData,id: Math.random().toString()};
     console.log(data);
     props.onNewDetails(data);
   }

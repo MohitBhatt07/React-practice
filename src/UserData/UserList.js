@@ -8,8 +8,8 @@ const UserList = (props)=>{
   return (
     <Card className ="userList">
       {
-        props.userDetails.map((detail,index)=>(
-          <UserItem key={index} userName ={detail.name} userAge= {detail.age}/>
+        props.userDetails.map((detail)=>(
+          <UserItem key={detail.id} userName ={detail.name} userAge= {detail.age} id= {detail.id} onDelete = {props.onDeleteItem}/>
         ))
       }
     </Card>

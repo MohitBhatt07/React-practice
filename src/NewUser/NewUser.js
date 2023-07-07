@@ -34,7 +34,7 @@ const NewUser = (props) => {
   };
 
   return (
-    <div>
+    <>
       {error && (
         <ErrorModalSheet
           message={error.message}
@@ -45,7 +45,7 @@ const NewUser = (props) => {
       <Card className="new-user">
         <NewUserForm onSavedData={savedDataHandler} />
       </Card>
-    </div>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ const UserList = (props)=>{
   // if(props.userDetails.length === 0)
   //   return ;
   return (
-    <div>
+    <>
     <Card className ="userList">
       { 
         props.userDetails.map((detail)=>(
@@ -16,7 +16,7 @@ const UserList = (props)=>{
         ))
       }
     </Card>
-    </div>
+    </>
   )
 }
 

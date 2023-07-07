@@ -1,8 +1,15 @@
-.submit-button{
+/* .submit-button{
   color: white;
   background-color: rgb(68, 17, 116);
   margin: 0px 15px;
+  transition: background-color 1s;
 }
+
+.submit-button:hover{
+  background-color: rgb(106, 16, 167);
+  cursor: pointer;
+  transition: background-color 1s;
+} */
 
 .form-controls{
   display: flex;

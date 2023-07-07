@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import './NewUserForm.css';
 import Button from "../UI/Button";
-import ErrorModalSheet from "../UI/ErrorModalSheet";
 
 const NewUserForm = (props) => {
   const [inputName, setInputName] = useState("");
   const [inputAge, setInputAge] = useState("");
-  const [error , setError] = useState({});
  
   const nameInputHandler = (event) => {
     setInputName(event.target.value);
@@ -43,7 +41,7 @@ const NewUserForm = (props) => {
 
   
   return (
-    <div>
+    <>
   
     <form onSubmit={submitHandler}>
       <div className="form-controls">
@@ -59,7 +57,7 @@ const NewUserForm = (props) => {
       
       <Button onClick = {submitHandler} buttonName = {"ADD DETAILS"}/>
     </form>
-    </div>
+    </>
   );
 };
 

@@ -30,10 +30,11 @@ function App() {
   }
 
   return (
-    <div>
+    //  This works as a wrappper component
+    <> 
       <NewUser onNewDetails = {addDetailsHandler}/>
       <UserList userDetails={userData} onDeleteItem = {deleteItemHandler}/>
-    </div>
+    </>
   );
 }
 

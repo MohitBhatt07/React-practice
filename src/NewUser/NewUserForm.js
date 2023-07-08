@@ -1,63 +1,59 @@
-import React, { useState } from "react";
+import React, { useRef} from "react";
 import './NewUserForm.css';
 import Button from "../UI/Button";
 
 const NewUserForm = (props) => {
-  const [inputName, setInputName] = useState("");
-  const [inputAge, setInputAge] = useState("");
- 
-  const nameInputHandler = (event) => {
-    setInputName(event.target.value);
-  };
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
 
-  const ageInputHandler = (event) => {
-    setInputAge(event.target.value);
-  };
+  // const [inputName, setInputName] = useState("");
+  // const [inputAge, setInputAge] = useState("");
+ 
+
+
+  // const nameInputHandler = (event) => {
+    
+  //   setInputName(event.target.value);
+  // };
+
+  // const ageInputHandler = (event) => {
+  //   setInputAge(event.target.value);
+  // };
 
   const submitHandler = (event) => {
-    event.preventDefault();
-    // if(inputName.length === 0 && inputAge.length ===0){
-    //   console.log("empty");
-    //   return;
-    // }
-    // if(inputName.length === 0){
-    //   console.log("name is empty");
-    //   return;
-    // }
-    // if(inputAge.length ===0 ){
-    //   console.log("age is empty");
-    //   return;
-    // }
     
+    event.preventDefault();
+
     const details = {
-      name: inputName,
-      age: inputAge,
+      name: nameInputRef.current.value,
+      age: ageInputRef.current.value,
     };
 
     props.onSavedData(details);
-    setInputAge("");
-    setInputName("");
+    nameInputRef.current.value = '';
+    ageInputRef.current.value = "";
+    // setInputAge("");
+    // setInputName("");
   };
 
   
   return (
-    <>
-  
-    <form onSubmit={submitHandler}>
+    <React.Fragment>
+      <form onSubmit={submitHandler}>
       <div className="form-controls">
         <div className="form-control">
           <label>User Name</label>
-          <input type="text" onChange={nameInputHandler} value={inputName}/>
+          <input type="text" ref={nameInputRef}/>
         </div>
         <div className="form-control">
           <label>Age(in years)</label>
-          <input type="number" onChange={ageInputHandler} value={inputAge}/>
+          <input type="number"  ref ={ageInputRef}/>
         </div>
       </div>
       
       <Button onClick = {submitHandler} buttonName = {"ADD DETAILS"}/>
     </form>
-    </>
+    </React.Fragment>
   );
 };
 

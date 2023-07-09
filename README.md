@@ -1,5 +1,6 @@
 # Getting Started with Create React App
-
+Web app for storing user details ,displaying them.
+Users details can be deleted too.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
